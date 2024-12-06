@@ -69,7 +69,7 @@
       background-size: 90px;
       background-image: url(../img/bedrock.jpg);
       color: white;
-      position: fixed;
+      position: relative;
       width: 100%;
       bottom: 0;
       padding: 10px;

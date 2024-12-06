@@ -5,103 +5,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mapa Mine</title>
-    <link rel="stylesheet" href="css/style2.css" />
-    <!--obrigado kist-->
+    <link rel="stylesheet" href="./css/style3.css" />
   </head>
-  <style>
-    @import url("https://fonts.cdnfonts.com/css/minecraft-4");
-    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=VT323&display=swap");
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      background-image: url(img/rock.jpg);
-      background-size: 75px;
-    }
-
-    header {
-      font-family: "Minecraft", sans-serif;
-      background-image: url(img/grassblock.jpg);
-      background-size: 150px;
-      padding: 20px;
-      text-align: center;
-      -webkit-text-stroke-width: 0.25px;
-      -webkit-text-stroke-color: black;
-    }
-
-    h1 {
-      margin: 0;
-    }
-
-    nav ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    nav ul li {
-      display: inline;
-      margin-right: 15px;
-    }
-
-    nav ul li a {
-      color: rgb(255, 255, 255);
-      text-decoration: none;
-      -webkit-text-stroke-width: 0.75px;
-      -webkit-text-stroke-color: black;
-    }
-
-    footer {
-      font-family: "Minecraft", sans-serif;
-      text-align: center;
-      background-size: 90px;
-      background-image: url(img/bedrock.jpg);
-      color: white;
-      -webkit-text-stroke-width: 0.75px;
-      -webkit-text-stroke-color: black;
-    }
-
-    .conteudo {
-      font-family: "Poppins", sans-serif;
-      background-color: rgba(255, 255, 255, 0.8);
-      margin: 10px;
-      padding: 20px;
-      border-radius: 8px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .centralizado {
-      text-align: center;
-    }
-  </style>
-  <body id="bodymapa">
-    <header id="headermapa">
-      <h1 id="h1header">Wiki Minecraft - Mapa</h1>
+  
+  <body>
+    <header>
+      <h1>Wiki Minecraft - Mapa</h1>
       <nav>
         <ul id="ulheader">
           <li><a href="home.html">Home</a></li>
           <li><a href="blocos.html">Blocos</a></li>
           <li><a href="itens.html">Itens</a></li>
-          <li><a href="dicas.html">Dicas</a></li>
+          <li><a href="dicas.html">Como Jogar</a></li>
           <li><a href="mapa.html">Mapa</a></li>
           <li><a href="baixar.html">Baixar</a></li>
         </ul>
       </nav>
     </header>
     <main>
-      <section class="conteudo">
+      <section class="conteudo-home">
         <h2>Mapa</h2>
-        <p></p>
+        <p>
+          Teremos 3 estilos de jogos diferentes: Arena, Build Battle e Parkour
+        </p>
+      </section>
+      <section class="conteudo-arena">
+        <h3>Arena:</h3>
+        <p>Arena é um modo PvP de 4 pessoas num campo de batalha circular, a escolha de armamento pode variar de pessoa para pessoa, como espadas, machados, clavas, arcos e etc.</p>
+      </section>
+      <section class="conteudo-bb">
+        <h3>Build Battle:</h3>
+        <p>Build Battle é um modo onde quem construir uma construção de tema específico e receber mais votos positivos de todos os jogadores vence.</p>
+      </section>
+      <section class="conteudo-bb">
+        <h3>Parkour:</h3>
+        <p>Parkour é um modo onde jogadores fazem pulos e manobras perigosas para ir de um ponto para o outro com o objetivo de completar o trajeto da maneira mais rápida que os outros jogadores.</p>
       </section>
     </main>
-    <footer id="footerbedrock">
-      <div class="div-copy">
+    <footer>
+      <div>
         <p>&copy; 2024 Wiki Minecraft</p>
       </div>
     </footer>

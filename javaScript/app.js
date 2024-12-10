@@ -1,6 +1,8 @@
 /** Klaian */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+import { 
+  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification 
+} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
 
 const firebaseConfig = {
@@ -15,9 +17,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-auth.languageCode = 'pt-br'
 const analytics = getAnalytics(app);
-const provider = new GoogleAuthProvider();
 
 function showMessage(message, type) {
   const messageContainer = document.getElementById("message-container");
@@ -39,17 +39,26 @@ registerButton.addEventListener("click", (e) => {
 
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      console.log("Usuário cadastrado:", userCredential.user);
-      showMessage("Cadastro realizado com sucesso!", "success");
-      setTimeout(function(){
-        window.location.reload();
-     }, 2000);
+      const user = userCredential.user;
+      
+      sendEmailVerification(user)
+        .then(() => {
+          showMessage("Verifique seu e-mail para confirmar o cadastro.", "info");
+          console.log("E-mail de verificação enviado para:", user.email);
+
+          document.getElementById('emailr').value = '';
+          document.getElementById('passwordr').value = '';
+        })
+        .catch((error) => {
+          console.error("Erro ao enviar email de verificação:", error.message);
+          showMessage("Erro ao enviar email de verificação.", "error");
+        });
     })
     .catch((error) => {
-      showMessage("Email ou Senha INCORRETOS!", "error");
-      document.getElementById('namer').value='';
-      document.getElementById('emailr').value='';
-      document.getElementById('passwordr').value='';
+      console.error("Erro ao cadastrar usuário:", error.message);
+      showMessage("Erro ao cadastrar. Verifique os dados.", "error");
+      document.getElementById('emailr').value = '';
+      document.getElementById('passwordr').value = '';
     });
 });
 
@@ -63,17 +72,23 @@ loginButton.addEventListener("click", (e) => {
 
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      console.log("Usuário logado:", userCredential.user);
-      showMessage("Usuário logado com sucesso!")
-      setTimeout(function(){
-        window.location.href = "home.html"
-      }, 2000)
+      const user = userCredential.user;
+
+      if (user.emailVerified) {
+        showMessage("Usuário logado com sucesso!", "success");
+        setTimeout(function() {
+          window.location.href = "index.html";
+        }, 2000);
+      } else {
+        showMessage("Por favor, confirme seu e-mail antes de fazer login.", "warning");
+        console.log("E-mail não verificado para:", user.email);
+      }
     })
     .catch((error) => {
       console.error("Erro ao fazer login:", error.message);
       showMessage("Login INCORRETO!", "error");
-      document.getElementById('emaill').value='';
-      document.getElementById('passwordl').value='';
+      document.getElementById('emaill').value = '';
+      document.getElementById('passwordl').value = '';
     });
 });
 /** Klaian */

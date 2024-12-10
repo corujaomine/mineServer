@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Início - Wiki Minecraft</title>
-    <link rel="stylesheet" href="./css/sidebar.css" />
+    <link rel="stylesheet" href="./css/botao.css" />
     <link rel="stylesheet" href="./css/style2.css" />
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js"></script>
   </head>
   <body>
     <header>
@@ -19,7 +21,9 @@
           <li><a href="mapa.html">Mapa</a></li>
           <li><a href="baixar.html">Baixar</a></li>
           <li><a href="creditos.html">Equipe</a></li>
+          <li><a href="logout-button">Logout</a></li>
         </ul>
+        <button id="logout-button">Deslogar</button>
       </nav>
     </header>
 
@@ -41,5 +45,6 @@
     <footer>
       <p>&copy; 2024 Wiki Minecraft</p>
     </footer>
+    <script type="module" src="javaScript/dashboard.js"></script>
   </body>
 </html>

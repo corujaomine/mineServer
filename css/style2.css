@@ -80,7 +80,8 @@
     .conteudo {
         font-family: "Poppins", sans-serif;
         background-color: rgba(255, 255, 255, 0.8);
-        margin: 119px;
+        margin-top: 10px;
+        margin: 30px;
         padding: 20px;
         border-radius: 8px;
         max-width: 900px;
@@ -127,7 +128,8 @@
     .conteudo-home{
         font-family: "Poppins", sans-serif;
         background-color: rgba(255, 255, 255, 0.8);
-        margin: 119px;
+        margin: 140px;
+        margin-bottom: 20px;
         padding: 20px;
         border-radius: 8px;
         max-width: 900px;
@@ -138,30 +140,6 @@
 
     .conteudo-home h2{
         text-align: center;
-    }
-
-    .conteudo-arena{
-        font-family: "Poppins", sans-serif;
-        background-color: rgba(255, 255, 255, 0.8);
-        margin-top: -110px;
-        padding: 20px;
-        border-radius: 8px;
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-        box-shadow: 0px 4px 12px #000000;
-    }
-
-    .conteudo-bb{
-        font-family: "Poppins", sans-serif;
-        background-color: rgba(255, 255, 255, 0.8);
-        margin: 10px;
-        padding: 20px;
-        border-radius: 8px;
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-        box-shadow: 0px 4px 12px #000000;
     }
 
     

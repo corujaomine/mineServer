@@ -77,7 +77,7 @@ loginButton.addEventListener("click", (e) => {
       if (user.emailVerified) {
         showMessage("Usuário logado com sucesso!", "success");
         setTimeout(function() {
-          window.location.href = "index.html";
+          window.location.href = "home.html";
         }, 2000);
       } else {
         showMessage("Por favor, confirme seu e-mail antes de fazer login.", "warning");
